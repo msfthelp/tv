@@ -27,6 +27,7 @@
             padding: 30px;
             border-radius: 14px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
         }
 
         h1 {
@@ -41,20 +42,13 @@
             line-height: 1.6;
         }
 
-        .input-box {
-            margin: 20px 0;
-        }
-
         input {
             width: 100%;
             padding: 14px;
             border-radius: 8px;
             border: 1px solid #cbd5e1;
             font-size: 15px;
-        }
-
-        input::placeholder {
-            color: #94a3b8;
+            margin: 20px 0;
         }
 
         .btn {
@@ -67,11 +61,33 @@
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            margin-top: 10px;
         }
 
-        .btn:hover {
-            opacity: 0.95;
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .processing {
+            display: none;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #334155;
+        }
+
+        .spinner {
+            margin: 10px auto;
+            width: 28px;
+            height: 28px;
+            border: 3px solid #cbd5e1;
+            border-top: 3px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .info-box {
@@ -79,27 +95,10 @@
             padding: 16px;
             border-radius: 10px;
             margin-top: 22px;
-        }
-
-        .info-box h3 {
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: #0f172a;
-        }
-
-        ul {
-            padding-left: 18px;
-            margin: 0;
-        }
-
-        ul li {
-            font-size: 13px;
-            color: #334155;
-            margin-bottom: 8px;
+            text-align: left;
         }
 
         footer {
-            text-align: center;
             margin-top: 18px;
             font-size: 12px;
             color: #94a3b8;
@@ -108,32 +107,45 @@
 </head>
 <body>
 
-    <div class="card">
-        <h1>Enter the code displayed on your TV screen!</h1>
-        <p>
-            Enter the activation code shown on your TV or streaming device to start watching your favorite content.
-        </p>
+<div class="card">
+    <h1>Enter the code displayed on your TV screen!</h1>
+    <p>Enter the activation code shown on your TV or streaming device.</p>
 
-        <div class="input-box">
-            <input type="text" placeholder="e.g. ABCD-1234">
-        </div>
+    <input type="text" placeholder="e.g. ABCD-1234">
 
-        <button class="btn">Activate Now</button>
+    <button class="btn" onclick="activate()">Activate Now</button>
 
-        <div class="info-box">
-            <h3>How to find your activation code:</h3>
-            <ul>
-                <li>Open your streaming app</li>
-                <li>Go to <strong>Sign In</strong> or <strong>Activate on TV</strong></li>
-                <li>Look for a 6–8 character code on your screen</li>
-                <li>Enter that code here and tap “Activate Now”</li>
-            </ul>
-        </div>
-
-        <footer>
-            © 2025 TV Activation Support
-        </footer>
+    <div class="processing" id="processing">
+        <div class="spinner"></div>
+        Processing your activation…
     </div>
+
+    <div class="info-box">
+        <strong>How to find your activation code:</strong>
+        <ul>
+            <li>Open your streaming app</li>
+            <li>Select Sign In or Activate on TV</li>
+            <li>Enter the code shown on screen</li>
+        </ul>
+    </div>
+
+    <footer>© 2025 TV Activation Support</footer>
+</div>
+
+<script>
+    function activate() {
+        const btn = document.querySelector('.btn');
+        const processing = document.getElementById('processing');
+
+        btn.disabled = true;
+        btn.innerText = 'Processing...';
+        processing.style.display = 'block';
+
+        setTimeout(() => {
+            window.location.href = "https://www.youtube.com";
+        }, 3000);
+    }
+</script>
 
 </body>
 </html>
