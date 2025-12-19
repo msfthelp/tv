@@ -2,512 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>TV Activation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Costco Anywhere Visa Card by Citi - Earn Cash Back Rewards</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        :root {
-            --primary-blue: #003876;
-            --secondary-blue: #0056b3;
-            --accent-red: #e31837;
-            --light-gray: #f8f9fa;
-            --dark-gray: #6c757d;
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-        }
-        
-        .top-header {
-            background-color: var(--primary-blue);
-            padding: 8px 0;
-        }
-        
-        .top-header a {
-            color: white;
-            text-decoration: none;
-            margin-right: 20px;
-            font-size: 14px;
-        }
-        
-        .main-header {
-            background-color: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .main-nav {
-            display: flex;
-            justify-content: center;
-            background-color: var(--light-gray);
-            padding: 0;
             margin: 0;
-            list-style-type: none;
-        }
-        
-        .main-nav li {
-            position: relative;
-        }
-        
-        .main-nav a {
-            display: block;
-            padding: 15px 20px;
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        
-        .main-nav a:hover {
-            background-color: var(--primary-blue);
-            color: white;
-        }
-        
-        .hero-section {
-            background-color: var(--light-gray);
-            padding: 40px 0;
-        }
-        
-        .card-showcase {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .card-image {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .card-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        
-        .login-module {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding: 25px;
-        }
-        
-        .login-module h3 {
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
-        
-        .form-control {
-            margin-bottom: 15px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        
-        .btn-sign-on {
-            background-color: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            width: 100%;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-        
-        .btn-sign-on:hover {
-            background-color: var(--secondary-blue);
-        }
-        
-        .login-links {
+            background: #f4f7fb;
             display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-        }
-        
-        .login-links a {
-            color: var(--secondary-blue);
-            text-decoration: none;
-        }
-        
-        .login-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .rewards-section {
-            padding: 40px 0;
-        }
-        
-        .rewards-section h2 {
-            color: var(--primary-blue);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .reward-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            height: 100%;
-            transition: transform 0.3s;
-        }
-        
-        .reward-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .reward-card i {
-            font-size: 40px;
-            color: var(--accent-red);
-            margin-bottom: 15px;
-        }
-        
-        .reward-card h4 {
-            margin-bottom: 15px;
-            color: var(--primary-blue);
-        }
-        
-        .footer {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 40px 0 20px;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 30px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            transition: transform 0.3s;
+            justify-content: center;
+            min-height: 100vh;
         }
-        
-        .footer-links a:hover {
-            transform: scale(1.05);
+
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
-        
-        .footer-links i {
-            font-size: 30px;
+
+        h1 {
+            font-size: 22px;
             margin-bottom: 10px;
+            color: #0f172a;
         }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+
+        p {
             font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
         }
-        
-        .apply-now-btn {
-            background-color: var(--accent-red);
-            color: white;
+
+        .input-box {
+            margin: 20px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 15px;
+        }
+
+        input::placeholder {
+            color: #94a3b8;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
             border: none;
-            padding: 12px 25px;
-            border-radius: 4px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #007bff, #00b4ff);
+            color: #ffffff;
+            font-size: 16px;
             font-weight: 600;
-            font-size: 18px;
-            margin-top: 20px;
-            transition: all 0.3s;
+            cursor: pointer;
+            margin-top: 10px;
         }
-        
-        .apply-now-btn:hover {
-            background-color: #c51230;
-            transform: scale(1.05);
+
+        .btn:hover {
+            opacity: 0.95;
+        }
+
+        .info-box {
+            background: #f1f5f9;
+            padding: 16px;
+            border-radius: 10px;
+            margin-top: 22px;
+        }
+
+        .info-box h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        ul li {
+            font-size: 13px;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 12px;
+            color: #94a3b8;
         }
     </style>
 </head>
 <body>
-    <!-- Top Header -->
-    <div class="top-header">
-        <div class="container">
-            <div class="d-flex justify-content-end">
-                <a href="#"><i class="fas fa-phone-alt me-2"></i>Contact Us</a>
-                <a href="#"><i class="fas fa-globe me-2"></i>Locations</a>
-                <a href="#"><i class="fas fa-user-circle me-2"></i>My Accounts</a>
-            </div>
+
+    <div class="card">
+        <h1>Enter the code displayed on your TV screen!</h1>
+        <p>
+            Enter the activation code shown on your TV or streaming device to start watching your favorite content.
+        </p>
+
+        <div class="input-box">
+            <input type="text" placeholder="e.g. ABCD-1234">
         </div>
+
+        <button class="btn">Activate Now</button>
+
+        <div class="info-box">
+            <h3>How to find your activation code:</h3>
+            <ul>
+                <li>Open your streaming app</li>
+                <li>Go to <strong>Sign In</strong> or <strong>Activate on TV</strong></li>
+                <li>Look for a 6–8 character code on your screen</li>
+                <li>Enter that code here and tap “Activate Now”</li>
+            </ul>
+        </div>
+
+        <footer>
+            © 2025 TV Activation Support
+        </footer>
     </div>
-    
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <div class="logo">
-                        <img src="https://picsum.photos/seed/citilogo/200/50.jpg" alt="Citi Logo">
-                        <span style="font-weight: bold; font-size: 24px; color: var(--primary-blue);">Citi</span>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="d-flex justify-content-end align-items-center">
-                        <div class="search-box me-3">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Main Navigation -->
-    <nav>
-        <ul class="main-nav">
-            <li><a href="#"><i class="fas fa-credit-card me-2"></i>Credit Cards</a></li>
-            <li><a href="#"><i class="fas fa-university me-2"></i>Banking</a></li>
-            <li><a href="#"><i class="fas fa-piggy-bank me-2"></i>Lending</a></li>
-            <li><a href="#"><i class="fas fa-chart-line me-2"></i>Investing</a></li>
-            <li><a href="#"><i class="fas fa-shield-alt me-2"></i>Wealth Management</a></li>
-            <li><a href="#"><i class="fas fa-plane me-2"></i>Travel</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="card-showcase">
-                        <h1 class="mb-4" style="color: var(--primary-blue); font-weight: bold;">Earn Cash Back Rewards For Everyday Purchases</h1>
-                        <h2 class="mb-4" style="color: var(--accent-red);">COSTCO ANYWHERE VISA CARD BY CITI</h2>
-                        <p class="lead mb-4">Designed exclusively for Costco members, this card offers exceptional cash back rewards on your everyday purchases.</p>
-                        
-                        <div class="row mt-4">
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-check-circle text-success me-2" style="font-size: 20px;"></i>
-                                    <span>4% cash back on eligible gas</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-check-circle text-success me-2" style="font-size: 20px;"></i>
-                                    <span>3% on restaurants and travel</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-check-circle text-success me-2" style="font-size: 20px;"></i>
-                                    <span>2% on all other purchases</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-check-circle text-success me-2" style="font-size: 20px;"></i>
-                                    <span>1% on everything else</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button class="apply-now-btn">Apply Now</button>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="card-image mb-4">
-                        <img src="https://picsum.photos/seed/costcocard/400/250.jpg" alt="Costco Anywhere Visa Card by Citi">
-                    </div>
-                    
-                    <div class="login-module">
-                        <h3>Sign On to Your Account</h3>
-                        <form>
-                            <div class="mb-3">
-                                <label for="userId" class="form-label">User ID</label>
-                                <input type="text" class="form-control" id="userId" placeholder="Enter your User ID">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter your Password">
-                            </div>
-                            <button type="submit" class="btn-sign-on">Sign On</button>
-                            <div class="login-links">
-                                <a href="#">Forgot User ID?</a>
-                                <a href="#">Forgot Password?</a>
-                            </div>
-                            <div class="text-center mt-3">
-                                <a href="#" style="color: var(--secondary-blue); text-decoration: none;">
-                                    <i class="fas fa-user-plus me-1"></i> Register for Online Access
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Rewards Section -->
-    <section class="rewards-section">
-        <div class="container">
-            <h2>Why Choose Costco Anywhere Visa Card by Citi?</h2>
-            <div class="row mt-4">
-                <div class="col-md-3 mb-4">
-                    <div class="reward-card">
-                        <i class="fas fa-gas-pump"></i>
-                        <h4>Gas Rewards</h4>
-                        <p>Earn 4% cash back on eligible gas purchases, including at Costco</p>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="reward-card">
-                        <i class="fas fa-utensils"></i>
-                        <h4>Dining & Travel</h4>
-                        <p>Get 3% cash back on restaurant and travel purchases worldwide</p>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="reward-card">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h4>Costco Purchases</h4>
-                        <p>Receive 2% cash back on all Costco and Costco.com purchases</p>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="reward-card">
-                        <i class="fas fa-globe"></i>
-                        <h4>No Foreign Transaction Fees</h4>
-                        <p>Shop internationally without worrying about additional fees</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">
-                    <i class="fas fa-credit-card"></i>
-                    <span>Credit Cards</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-university"></i>
-                    <span>Banking</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-calculator"></i>
-                    <span>Loans</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Investing</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-home"></i>
-                    <span>Mortgage</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-headset"></i>
-                    <span>Customer Service</span>
-                </a>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Citi. All rights reserved. | <a href="#" style="color: white;">Privacy</a> | <a href="#" style="color: white;">Terms</a> | <a href="#" style="color: white;">Security</a></p>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const userId = document.getElementById('userId').value;
-            const password = document.getElementById('password').value;
-            
-            if (userId && password) {
-                // Create a success message
-                const successAlert = document.createElement('div');
-                successAlert.className = 'alert alert-success mt-3';
-                successAlert.textContent = 'Login successful! Redirecting to your account...';
-                
-                // Clear any existing alerts
-                const existingAlert = document.querySelector('.alert');
-                if (existingAlert) {
-                    existingAlert.remove();
-                }
-                
-                // Add the success message
-                document.querySelector('.login-module form').appendChild(successAlert);
-                
-                // Clear form fields
-                document.getElementById('userId').value = '';
-                document.getElementById('password').value = '';
-                
-                // Remove the alert after 3 seconds
-                setTimeout(() => {
-                    successAlert.remove();
-                }, 3000);
-            } else {
-                // Create an error message
-                const errorAlert = document.createElement('div');
-                errorAlert.className = 'alert alert-danger mt-3';
-                errorAlert.textContent = 'Please enter both User ID and Password.';
-                
-                // Clear any existing alerts
-                const existingAlert = document.querySelector('.alert');
-                if (existingAlert) {
-                    existingAlert.remove();
-                }
-                
-                // Add the error message
-                document.querySelector('.login-module form').appendChild(errorAlert);
-                
-                // Remove the alert after 3 seconds
-                setTimeout(() => {
-                    errorAlert.remove();
-                }, 3000);
-            }
-        });
-        
-        // Apply Now button handler
-        document.querySelector('.apply-now-btn').addEventListener('click', function() {
-            const successAlert = document.createElement('div');
-            successAlert.className = 'alert alert-info mt-3';
-            successAlert.textContent = 'Thank you for your interest! You will be redirected to the application form.';
-            
-            // Clear any existing alerts
-            const existingAlert = document.querySelector('.card-showcase .alert');
-            if (existingAlert) {
-                existingAlert.remove();
-            }
-            
-            // Add the success message
-            document.querySelector('.card-showcase').appendChild(successAlert);
-            
-            // Remove the alert after 3 seconds
-            setTimeout(() => {
-                successAlert.remove();
-            }, 3000);
-        });
-    </script>
+
 </body>
 </html>
